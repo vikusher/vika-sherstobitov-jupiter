@@ -1,0 +1,202 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+a {
+    color: #FCBB6D;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(58, 58, 78, 0.1);
+}
+
+/* Sidebar Styles */
+ .sidebar {
+    background-color: #475C7A;
+    color: white;
+    width: 30%;
+    text-align: left;
+    padding: 2rem;
+}
+
+ #photo img {
+    border-radius: 50%; 
+    display: block; 
+    margin: 0 auto; 
+}
+
+ #personal_info ul {
+    padding: 0; 
+    margin: 0; 
+  }
+  
+  #personal_info li {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px; 
+    line-height: 1.5;
+  }
+  
+  #personal_info li i {
+    flex-shrink: 0; 
+    width: 20px; 
+    text-align: center; 
+    margin-right: 15px; 
+    font-size: 18px; 
+    
+  }
+  
+  #personal_info ul li:hover {
+    color: #FCBB6D; 
+  }
+
+.sidebar h2 {
+    font-size: 1.2rem;
+    border-bottom: 1px solid #FCBB6D;
+    margin: 1rem auto;
+    color: #FCBB6D;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 1rem;
+}
+
+.sidebar a {
+    color: #fff;
+}
+
+.languages .stars {
+    color: #FCBB6D;
+    font-size: 1.1rem;
+}
+
+/* Align icons(workout, cooking, traveling) inside the circle */
+.icon-circle {
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center;
+    width: 30px;
+    height: 30px; 
+    background-color: #000; 
+    color: #fff; 
+    border-radius: 50%; 
+    margin-right: 10px; 
+    font-size: 14px; 
+  }
+
+  #contact ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #contact li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+/* Main Content Styles */
+.main-content {
+    width: 70%;
+    padding: 2rem;
+}
+
+#about h2 {
+    font-size: 1.5rem; 
+    color: #475c7a;; 
+    text-align: left; 
+    font-weight: bold;
+    margin-bottom: 0px; 
+}
+
+#education h2 {
+    font-size: 1.5rem; 
+    color: #475c7a;; 
+    text-align: left; 
+    font-weight: bold;
+    margin-bottom: 0px; 
+}
+
+.educaion_style,
+.company_name {
+    color: #c28234;
+    font-weight: bold;
+}
+
+.company {
+   color: #475C7A; font-weight: bold; font-size: large;
+}
+
+#experience h2 {
+    font-size: 1.5rem; 
+    color: #475c7a;; 
+    text-align: left; 
+    font-weight: bold;
+    margin-bottom: 0px; 
+}
+
+#name h1 {
+    font-size: 1.5rem; 
+    color: #c28234;; 
+    text-align: left; 
+    margin: 0px; 
+    font-weight: bold; 
+    line-height: 1.1; 
+}
+
+#name h3 {
+    font-size: 1.2rem; 
+    color: #c28234; 
+    text-align: left; 
+    margin: 0px; 
+    font-weight: 500; 
+    line-height: 1.5; 
+}
+
+.main-content h1 {
+    color: #475c7a;
+}
+
+.main-content h2 {
+    color: #475C7A;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+
+.main-content p,
+.main-content ul {
+    margin: 1rem 0;
+    line-height: 1.6; 
+}
+
+.main-content ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+}
+
+p.collegename {
+    color: #c28234;
+    size: bold;
+}
+

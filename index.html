@@ -4,118 +4,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description"
-        content="Final project for Code The Dream Jupiter class by Viktoriia Sherstobitova. Showcasing skills in web design, HTML, CSS, JavaScript, and DOM manipulation.">
+        content="Final project for Code The Dream Jupiter class by Vika Sherstobitov. Showcasing skills in web design, HTML, CSS, JavaScript, and DOM manipulation.">
     <meta name="keywords" content="Code The Dream, web development, HTML, CSS, JavaScript">
-    <meta name="author" content="Viktoriia Sherstobitova">
+    <meta name="author" content="Vika Sherstobitov">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Viktoriia Sherstobitova - Web Developer Portfolio </title>
+    <title>Vika Sherstobitov - Web Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
+    <div class="container">
+        <!-- Sidebar Section -->
+        <div class="sidebar">
 
-    <h1>Vika Sherstobitov</h1>
-    <section id="About">
-        <h2>About</h2>
-        <p>My name is Viktoriia Sherstobitova, originally from Saint Petersburg, Russia. I hold a Master's degree in
-            Quality Control Management from Baltic State Technical University. I moved to the United States
-            ten years
-            ago and pursued new opportunities in the field of QA Automation. I earned two professional certificates in
-            <a href="https://coursera.org/share/44e4eeec401bbe43603092d555ceffce" target="_blank"> Programming
-                Foundations with JavaScript, HTML, and CSS </a> and <a
-                href="https://coursera.org/share/2f335f0c502c12df0780916f5d7d9407" target="_blank">
-                Data Science Math Skills </a> from Duke University through Coursera. Additionally,
-            I completed an SDET Bootcamp, which helped me transition from my previous experience in Quality Control in
-            Russia to a career
-            in QA Automation in the U.S. I worked as a QA Automation Engineer for 11 months, gaining hands-on experience
-            with test automation
-            frameworks, Selenium WebDriver, TestNG, and Gherkin. I am passionate about learning new technologies and
-            contributing
-            to efficient and high-quality software solutions.
-        </p>
-        <h3>Professional Skills:</h3>
-        <ul>
-            <li>Operating systems: Windows</li>
-            <li>QC Software: DefectTracker, Jira</li>
-            <li>Source Control: Git, GitHub</li>
-            <li>CI/CD: Circle CI</li>
-            <li>Databases: MS SQL Server, MySQL</li>
-            <li>IDE: IntelliJ IDEA</li>
-            <li>Programming/query/
-                markup languages: Java, SQL, HTML/CSS, JavaScript</li>
-            <li>Test Automation: Selenium, Cucumber, TestNG, Gherkin</li>
-            <li>ERP: Microsoft Dynamics - Axapta</li>
-            <li>Other: Maven, BDD, Postman, Copilot</li>
-        </ul>
-        <h3>Personal:</h3>
-        <p> Responsible, attentive, careful, light in communication, accurate, receptive to new information, tolerant.
-        </p>
-    </section>
+            <section id="photo">
+                <img src="images/profile-photo.jpg" alt="Vika Sherstobitov" width="150" />
+            </section>
 
-    <section id="Experience">
-        <h2>Experience</h2>
-
-        <ul>
-            <li>
-                <strong>SDET - Lendos.co</strong>. (01.2022 - 11.2022)
-                <p><strong>Company: </strong> Lendos is a P2P lending platform which allows to invest in the e-commerce
-                    market via loans and provides the opportunity for e-commerce sellers to fund the growth of the
-                    business. The key feature is a scoring algorithm, evaluating borrowers based on a deep analysis of
-                    their Amazon shop business performance.
-                </p>
+            <!-- Personal Info -->
+            <section id="personal_info">
+                <h2>Personal Information</h2>
                 <ul>
-                    <li>Participated in the platform design on the early stages of the product and company - assured the
-                        testability is achieved from the day-1.</li>
-                    <li>Participated in design of the test automation framework for the lending
-                        platform (Selenium Webdriver, TestNG, Gherkin).
+                    <li>
+                        <i class="fa-solid fa-house"></i> Residence: Cary, NC
                     </li>
-                    <li>Performed integration testing with the 3rd party data providers (Amazon API).</li>
-                    <li>Developed the test documentation.</li>
+                    <li>
+                        <i class="fa-solid fa-id-card"></i> Status: US Citizen
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i> Street Name, City, State
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i> +1 984 222 22 22
+                    </li>
+                </ul><br>
+            </section>
+
+            <!-- Languages -->
+            <section id="languages">
+                <h2>Languages</h2>
+                <ul class="languages">
+                    <li>Russian <span class="stars">★★★★★</span></li>
+                    <li>English <span class="stars">★★★★★</span></li>
+                </ul><br>
+            </section>
+
+            <!-- Professional Skills -->
+            <section id="professional_skills">
+                <h2>Professional skills</h2>
+                <ul>
+                    <li>Operating systems - Windows</li>
+                    <li> QC Software - DefectTracker, Jira</li>
+                    <li>Source Control - Git, GitHub</li>
+                    <li>CI/CD - Circle CI</li>
+                    <li>Databases - MS SQL Server, MySQL</li>
+                    <li>IDE - IntelliJ IDEA</li>
+                    <li>Programming/query/
+                        markup languages - Java, SQL, HTML/CSS, JavaScript</li>
+                    <li>Test Automation - Selenium, Cucumber, TestNG, Gherkin</li>
+                    <li> ERP - Microsoft Dynamics - Axapta</li>
+                    <li> Other - Maven, BDD, Postman, Copilot</li>
+                </ul><br>
+            </section>
+
+            <!-- Hobbies -->
+            <section id="hobbies">
+                <h2>Hobbies</h2>
+                <ul>
+                    <li>
+                        <span class="icon-circle">
+                            <i class="fa-solid fa-dumbbell"></i>
+                        </span>
+                        Workout
+                    </li>
+                    <li>
+                        <span class="icon-circle">
+                            <i class="fa-solid fa-utensils"></i>
+                        </span>
+                        Cooking
+                    </li>
+                    <li>
+                        <span class="icon-circle">
+                            <i class="fa-solid fa-plane"></i>
+                        </span>
+                        Traveling
+                    </li>
+                </ul><br>
+            </section>
+
+            <!-- Contact -->
+            <section id="contact">
+                <h2>Contact</h2>
+                <ul>
+                    <li>
+                        <span class="icon-circle">
+                            <i class="fa-brands fa-github"></i>
+                        </span>
+                        <a href="https://github.com/vikusher" target="_blank">GitHub</a>
+                    </li>
+                    <li>
+                        <span class="icon-circle">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        <a href="mailto:vikusher@gmail.com">Email</a>
+                    </li>
+                    <li>
+                        <span class="icon-circle">
+                            <i class="fa-brands fa-facebook"></i>
+                        </span>
+                        <a href="https://www.facebook.com/profile.php?id=100006899867422" target="_blank">Facebook</a>
+                    </li>
                 </ul>
-            </li>
-            <hr>
-            <li>
-                <strong>Quality Control Engineer - OCS Distribution</strong> (03.2005 - 05.2010)
-                <p> <strong>Company: </strong> OCS is the leading IT value/volume distributor in the Eastern European
-                    corporate market. OCS provides distribution of IT and technology products and services with a
-                    commitment to delivering best-of-breed solutions to its partners: corporate
-                    resellers, system integrators, national and local retailers, assemblers, service
-                    providers and other corporate and consumer suppliers.
-                    Primary roles: Quality Control Engineer, Test lab coordinator
+            </section>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="main-content">
+
+            <!-- Name Section -->
+            <section id="name">
+                <h1>Vika Sherstobitov</h1>
+                <h3>Quality Control Engineer | Software Development Engineer in Test</h3>
+            </section>
+
+            <!-- About Section -->
+            <section id="about">
+                <h2>About</h2>
+                <p>I am Vika Sherstobitov, originally from Saint Petersburg, Russia. I hold a Master's degree in
+                    Quality Control Management from Baltic State Technical University. I moved to the United States ten
+                    years ago and pursued new opportunities in the field of QA Automation.</p>
+                <p>
+                    I am responsible, attentive, and detail-oriented, bringing a meticulous approach to my work. My
+                    light communication style allows for effective collaboration, while I maintain accuracy and
+                    precision in all tasks. I am receptive to new information and consistently strive to learn new
+                    technologies and methodologies.
                 </p>
+                <p>I earned two professional certificates in <a
+                        href="https://coursera.org/share/44e4eeec401bbe43603092d555ceffce" target="_blank">
+                        Programming Foundations with JavaScript, HTML, and CSS</a> and <a
+                        href="https://coursera.org/share/2f335f0c502c12df0780916f5d7d9407" target="_blank">
+                        Data Science Math Skills</a> from Duke University. Additionally, I completed an SDET Bootcamp,
+                    which helped me transition to a career in QA Automation in the U.S.</p>
+                <p>As a QA Automation Engineer for 11 months, I gained hands-on experience with test automation
+                    frameworks, Selenium WebDriver, TestNG, and Gherkin. I am passionate about learning new technologies
+                    and contributing to efficient and high-quality software solutions.</p>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education">
+                <h2>Education</h2>
+                <p>
+                    2000-2005 <br>
+                    <span class="educaion_style">Baltic State Technical University</span><br>
+                    Master’s (Engineer)<br>
+                    Engineering and Quality Management Faculty
+                </p>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience">
+                <h2>Work experience</h2>
+
+                <p>05.2021-11.2023 <br>
+                    <span class="company_name">Lendos.co</span><br>
+                    Software Development Engineer in Test
+                </p>
+                <p><span class="company">Company:</span> Lendos is a P2P
+                    lending platform that allows investing in the e-commerce
+                    market via loans and provides funding opportunities for e-commerce businesses.</p>
+                <ul>
+                    <li>Participated in the platform design on the early stages of the product to assure testability.
+                    </li>
+                    <li>Designed the test automation framework using Selenium WebDriver, TestNG, and Gherkin.</li>
+                    <li>Performed integration testing with third-party data providers (Amazon API).</li>
+                    <li>Developed test documentation.</li>
+                </ul>
+                <hr>
+
+                <p> 03.2005 - 05.2010 <br>
+                    <span class="company_name">OCS Distribution</span><br>
+                    Quality Control Engineer
+                </p>
+
+                <p><span class="company">Company:</span> OCS is the leading
+                    IT value/volume distributor in the Eastern European
+                    corporate market.</p>
                 <ul>
                     <li>Developed the necessary test documentation.</li>
-                    <li>Participation in implementation of corporate Quality Management System.
-                    </li>
-                    <li>Administration and maintenance of quality control tracking ERP system.</li>
-                    <li>Has been providing vendors with the necessary certificates.</li>
+                    <li>Participated in implementing the corporate Quality Management System.</li>
+                    <li>Administered and maintained the quality control tracking ERP system.</li>
+                    <li>Provided vendors with necessary certifications.</li>
                     <li>Coordinated test activities in multiple test labs.</li>
-                    <li>Has been a primary point of contact for the regulators.</li>
-                    <li>Quality audit and compliance review. </li>
-                    <li>Participated in ISO 9001/9000 certification.</li>
-                    <li>Participated in creation of new OSTs. </li>
-                    <li>Performed quality audits.</li>
+                    <li>Performed quality audits and compliance reviews.</li>
                 </ul>
-            </li>
-            <li>
                 <hr>
-                <strong>Junior Quality Compliance Specialist - State Optical Institute</strong> (02.2003 - 03.2005)
-                <br><br>
-                <ul>
-                    <li>Conducted quality audits and participated in creating organizational standards.</li>
-                    <li>Provided support for regulatory compliance and documentation.</li>
-                </ul>
-            </li>
-        </ul>
-    </section>
-
-    <section id="Connect">
-        <h2>Connect</h2>
-        <ul>
-            <li> <a href="https://github.com/vikusher" target="_blank"> Git Hub </a></li>
-            <li><a href="https://www.facebook.com/profile.php?id=100006899867422" target="_blank"> Facebook</a></li>
-            <li> <a href="mailto:vikusher@gmail.com">Send Email</a></li>
-        </ul>
-    </section>
+                <p> 02.2003 - 03.2005 <br>
+                    <span class="company_name">State Optical Institute</span><br>
+                    Junior Quality Compliance Specialist
+                </p>
+                <p>Conducted quality audits, supported regulatory compliance, and participated in creating
+                    organizational standards.</p>
+            </section>
+        </div>
+    </div>
 </body>
 
 </html>
