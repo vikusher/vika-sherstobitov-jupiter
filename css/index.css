@@ -17,12 +17,69 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Default styles for the header*/
+
+header {
+    position: fixed; /* Makes the header fixed */
+    top: 0; /* Sticks it to the top */
+    width: 100%; /* Ensures the header spans the full width of the page */
+    background-color: #333; /* Background color for the header */
+    padding: 10px 0; /* Adds padding inside the header */
+    z-index: 1000; /* Ensures the header stays above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a shadow for visual separation */
+}
+
+nav ul li a:hover {
+    color: #FCBB6D;; /* Change color when hovering over links */
+}
+
+/* Default styles for the nav menu */
+.nav-menu {
+    display: flex; /* Horizontal by default */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Center the links */
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-menu.open {
+    display: flex; /* Display flex when 'open' class is added */
+    flex-direction: column;
+}
+
+/* Hide the hamburger menu on larger screens */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Add padding to the top of the main content to account for the sticky header */
+body {
+    margin: 0;
+    padding-top: 50px; 
+}
 .container {
     display: flex;
     max-width: 1000px;
     margin: 0 auto;
     background: #fff;
     box-shadow: 0 4px 8px rgba(58, 58, 78, 0.1);
+    flex-wrap: nowrap; /* Prevents wrapping */
+    width: 100%; /* Ensure the container takes the full width of the page */
 }
 
 /* Sidebar Styles */
@@ -32,6 +89,8 @@ a:hover {
     width: 30%;
     text-align: left;
     padding: 2rem;
+    box-sizing: border-box; /* Include padding in the width calculation */
+    flex: 0 0 250px; /* Fixed widt */
 }
 
  #photo img {
@@ -45,7 +104,7 @@ a:hover {
     margin: 0; 
   }
   
-  #personal_info li {
+ #personal_info li {
     display: flex; 
     align-items: center; 
     margin-bottom: 10px; 
@@ -75,10 +134,12 @@ a:hover {
 .sidebar ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .sidebar li {
     margin-bottom: 1rem;
+    word-wrap: break-word; /* Forces text to wrap */
 }
 
 .sidebar a {
@@ -97,65 +158,20 @@ a:hover {
     align-items: center;
     width: 30px;
     height: 30px; 
-    background-color: #000; 
+    background-color: #333;; 
     color: #fff; 
     border-radius: 50%; 
     margin-right: 10px; 
     font-size: 14px; 
   }
 
-  #contact ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  #contact li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-
 /* Main Content Styles */
 .main-content {
     width: 70%;
     padding: 2rem;
+    flex: 1; /* Main content takes the remaining space */
 }
-
-#about h2 {
-    font-size: 1.5rem; 
-    color: #475c7a;; 
-    text-align: left; 
-    font-weight: bold;
-    margin-bottom: 0px; 
-}
-
-#education h2 {
-    font-size: 1.5rem; 
-    color: #475c7a;; 
-    text-align: left; 
-    font-weight: bold;
-    margin-bottom: 0px; 
-}
-
-.educaion_style,
-.company_name {
-    color: #c28234;
-    font-weight: bold;
-}
-
-.company {
-   color: #475C7A; font-weight: bold; font-size: large;
-}
-
-#experience h2 {
-    font-size: 1.5rem; 
-    color: #475c7a;; 
-    text-align: left; 
-    font-weight: bold;
-    margin-bottom: 0px; 
-}
-
-#name h1 {
+.main-content h1 {
     font-size: 1.5rem; 
     color: #c28234;; 
     text-align: left; 
@@ -164,7 +180,15 @@ a:hover {
     line-height: 1.1; 
 }
 
-#name h3 {
+.main-content h2 {
+    font-size: 1.5rem; 
+    color: #475c7a;; 
+    text-align: left; 
+    font-weight: bold;
+    margin-bottom: 0px; 
+}
+
+.main-content h3 {
     font-size: 1.2rem; 
     color: #c28234; 
     text-align: left; 
@@ -173,16 +197,50 @@ a:hover {
     line-height: 1.5; 
 }
 
-.main-content h1 {
-    color: #475c7a;
+.educaion_style {
+    color: #c28234;
+    font-weight: bold;
 }
 
-.main-content h2 {
-    color: #475C7A;
-    display: inline-block;
-    margin-bottom: 1rem;
+p.collegename {
+    color: #c28234;
+    size: bold;
 }
 
+#experience {
+    display: flex;
+    flex-direction: column; /* Arrange jobs vertically */
+    gap: 20px; /* Add space between jobs */
+}
+
+.job {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ddd; /* Divider between jobs */
+    padding-bottom: 15px; /* Add space below each job */
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between; /* Title on the left, dates on the right */
+    align-items: center;
+}
+
+.job-title {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #c28234;
+}
+
+.job-dates {
+    font-style: italic;
+    color: #888; 
+}
+
+.job-description {
+    margin-top: 10px;
+    padding-left: 20px; /* Indent the description for better alignment */
+}
 
 .main-content p,
 .main-content ul {
@@ -195,8 +253,95 @@ a:hover {
     margin-left: 1.5rem;
 }
 
-p.collegename {
-    color: #c28234;
-    size: bold;
+
+/* Connect section in the main content area */
+.connect-main-content {
+    margin-top: 1rem; /* Add space above the section */
+    padding: 1rem; /* Add padding for better spacing */
 }
 
+.connect-main-content h2 {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #c28234;
+    padding-bottom: 1rem;
+}
+
+.connect-main-content .social-icons {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start; /* Align icons to the left */
+    gap: 1.5rem; /* Adjust spacing between items */
+}
+
+.connect-main-content .social-icons li {
+    display: flex;
+    align-items: center;
+}
+
+.connect-main-content .social-icons a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.connect-main-content .social-icons i {
+    font-size: 1.5rem;
+}
+
+/* Connect section links hover effect */
+.connect-main-content .social-icons a:hover {
+    color: #c28234; /* Replace with your desired hover color */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* adjust the layout for smaller screens if needed*/ 
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Hide menu on larger screens */
+    }
+    .nav-menu.show {
+        display: block; /* Show menu on click for small screens */
+    }
+
+
+    /* Responsive design */
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        display: none; /* Hide menu by default */
+        position: absolute;
+        top: 50px;
+        left: 0;
+        background-color: #333;
+        flex-direction: column; /* Stack items vertically */
+        width: 200px; /* Adjust width of the menu */
+        gap: 5px; /* Minimal space between list items */
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    nav ul.open {
+        display: flex; /* Show menu when toggled */
+    }
+
+    nav ul li a {
+        text-align: left;
+        padding: 10px 15px;
+    }
+}
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
