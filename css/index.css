@@ -1,4 +1,4 @@
-/* General Styles */
+/* Base Styles (Tablet) */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -18,7 +18,6 @@ a:hover {
 }
 
 /* Default styles for the header*/
-
 header {
     position: fixed; /* Makes the header fixed */
     top: 0; /* Sticks it to the top */
@@ -30,7 +29,7 @@ header {
 }
 
 nav ul li a:hover {
-    color: #FCBB6D;; /* Change color when hovering over links */
+    color: #FCBB6D; /* Change color when hovering over links */
 }
 
 /* Default styles for the nav menu */
@@ -57,7 +56,7 @@ nav ul li a:hover {
     flex-direction: column;
 }
 
-/* Hide the hamburger menu on larger screens */
+/* Hamburger menu styles */
 .hamburger {
     display: none;
     font-size: 24px;
@@ -72,6 +71,7 @@ body {
     margin: 0;
     padding-top: 50px; 
 }
+
 .container {
     display: flex;
     max-width: 1000px;
@@ -80,49 +80,49 @@ body {
     box-shadow: 0 4px 8px rgba(58, 58, 78, 0.1);
     flex-wrap: nowrap; /* Prevents wrapping */
     width: 100%; /* Ensure the container takes the full width of the page */
+    padding: 10px; /* Unified padding */
 }
 
 /* Sidebar Styles */
- .sidebar {
+.sidebar {
     background-color: #475C7A;
     color: white;
-    width: 30%;
+    width: 25%;
     text-align: left;
     padding: 2rem;
     box-sizing: border-box; /* Include padding in the width calculation */
-    flex: 0 0 250px; /* Fixed widt */
+    flex: 0 0 250px; /* Fixed width */
 }
 
- #photo img {
+#photo img {
     border-radius: 50%; 
     display: block; 
     margin: 0 auto; 
 }
 
- #personal_info ul {
+#personal_info ul {
     padding: 0; 
     margin: 0; 
-  }
-  
- #personal_info li {
+}
+
+#personal_info li {
     display: flex; 
     align-items: center; 
     margin-bottom: 10px; 
     line-height: 1.5;
-  }
-  
-  #personal_info li i {
+}
+
+#personal_info li i {
     flex-shrink: 0; 
     width: 20px; 
     text-align: center; 
     margin-right: 15px; 
     font-size: 18px; 
-    
-  }
-  
-  #personal_info ul li:hover {
+}
+
+#personal_info ul li:hover {
     color: #FCBB6D; 
-  }
+}
 
 .sidebar h2 {
     font-size: 1.2rem;
@@ -142,9 +142,11 @@ body {
     word-wrap: break-word; /* Forces text to wrap */
 }
 
+/*
 .sidebar a {
     color: #fff;
 }
+*/
 
 .languages .stars {
     color: #FCBB6D;
@@ -158,34 +160,37 @@ body {
     align-items: center;
     width: 30px;
     height: 30px; 
-    background-color: #333;; 
+    background-color: #333; 
     color: #fff; 
     border-radius: 50%; 
     margin-right: 10px; 
     font-size: 14px; 
-  }
+}
 
 /* Main Content Styles */
 .main-content {
-    width: 70%;
-    padding: 2rem;
+    width: 75%;
+    padding: 1.5rem; /* Reduced padding for smaller screens */
     flex: 1; /* Main content takes the remaining space */
 }
+
+.main-content h1,
+.main-content h2,
+.main-content h3 {
+    font-weight: bold;
+    line-height: 1.5;
+}
+
 .main-content h1 {
     font-size: 1.5rem; 
-    color: #c28234;; 
+    color: #c28234; 
     text-align: left; 
-    margin: 0px; 
-    font-weight: bold; 
-    line-height: 1.1; 
 }
 
 .main-content h2 {
     font-size: 1.5rem; 
-    color: #475c7a;; 
+    color: #475c7a; 
     text-align: left; 
-    font-weight: bold;
-    margin-bottom: 0px; 
 }
 
 .main-content h3 {
@@ -194,17 +199,16 @@ body {
     text-align: left; 
     margin: 0px; 
     font-weight: 500; 
-    line-height: 1.5; 
 }
 
-.educaion_style {
+.education_style {
     color: #c28234;
     font-weight: bold;
 }
 
 p.collegename {
     color: #c28234;
-    size: bold;
+    font-weight: bold;
 }
 
 #experience {
@@ -253,8 +257,7 @@ p.collegename {
     margin-left: 1.5rem;
 }
 
-
-/* Connect section in the main content area */
+/* Connect section */
 .connect-main-content {
     margin-top: 1rem; /* Add space above the section */
     padding: 1rem; /* Add padding for better spacing */
@@ -295,51 +298,8 @@ p.collegename {
 
 /* Connect section links hover effect */
 .connect-main-content .social-icons a:hover {
-    color: #c28234; /* Replace with your desired hover color */
+    color: #c28234; /* Replace hover color */
     transition: color 0.3s ease; /* Smooth color transition */
-}
-
-/* adjust the layout for smaller screens if needed*/ 
-
-@media (max-width: 768px) {
-    .nav-menu {
-        display: none; /* Hide menu on larger screens */
-    }
-    .nav-menu.show {
-        display: block; /* Show menu on click for small screens */
-    }
-
-
-    /* Responsive design */
-
-@media screen and (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-
-    nav ul {
-        display: none; /* Hide menu by default */
-        position: absolute;
-        top: 50px;
-        left: 0;
-        background-color: #333;
-        flex-direction: column; /* Stack items vertically */
-        width: 200px; /* Adjust width of the menu */
-        gap: 5px; /* Minimal space between list items */
-        padding: 10px;
-        border-radius: 5px;
-    }
-
-    nav ul.open {
-        display: flex; /* Show menu when toggled */
-    }
-
-    nav ul li a {
-        text-align: left;
-        padding: 10px 15px;
-    }
-}
-
 }
 
 html {
