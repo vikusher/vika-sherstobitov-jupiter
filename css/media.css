@@ -33,7 +33,7 @@
         top: 50px; /* Below the header */
         left: 0;
         width: 100%;
-        background-color: #333;
+        background-color: #2c3e50;
         z-index: 999;
     }
 
@@ -53,6 +53,10 @@
     .nav-menu li {
         text-align: center;
         padding: 10px 0;
+    }
+
+    #skillsSection li {
+        flex: 1 1 100%; /* Single column layout on smaller screens */
     }
 
     #about p {
@@ -95,6 +99,17 @@
         font-size: 1rem;  /* Smaller icon size */
     }
 
+    footer {
+        font-size: 14px; /* Slightly smaller font */
+        padding: 8px; /* Adjust padding */
+        text-align: center; /* Ensure content is centered */
+        position: fixed; /* Ensure it remains fixed */ 
+        width: 100%; /* Ensure it spans the entire width */
+        left: 0; /* Sticks to the left edge */ 
+        bottom: 0; /* Sticks to the bottom */
+        z-index: 1000; /* Ensure it stays above other elements */
+    }
+
 }
 
 /* Mobile devices with a maximum width of 480 pixels*/
@@ -121,5 +136,26 @@
 
     .job-description ul li {
         font-size: 0.9rem; /* Reduce font size for better readability */
+    }
+
+    #skills ul {
+        gap: 10px; /* Reduce gap for small devices */
+    }
+
+    #skills li {
+        font-size: 0.9em; /* Smaller font size for compact layout */
+        padding: 8px 12px; /* Adjust padding for smaller screens */
+        border-radius: 5px; /* Slightly tighter corners */
+    }  
+
+    footer {
+        flex-direction: column; /* Stack content vertically if there are multiple items */
+        font-size: 12px; /* Smaller font for small screens */
+        padding: 5px; /* Less padding for compact layout */
+        position: fixed; /* Ensure it remains fixed */
+        width: 100%; /* Ensure it spans the entire width */ 
+        left: 0; /* Sticks to the left edge */ 
+        bottom: 0; /* Stick to the bottom */
+        z-index: 1000; /* Ensure it stays above other elements */
     }
 }
