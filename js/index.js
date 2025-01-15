@@ -81,3 +81,59 @@ const skills = [
     skillsList.appendChild(skill);
   });
 
+// Select the form element
+const messageForm = document.forms['leave_message'];
+
+// Add an event listener for the "submit" event
+messageForm.addEventListener('submit', function(event) {
+  // Prevent the default form submission behavior
+  event.preventDefault();
+
+  // Retrieve values from the form fields
+  const usersName = event.target.usersName.value;
+  const usersEmail = event.target.usersEmail.value;
+  const usersMessage = event.target.usersMessage.value;
+
+  // Log the retrieved values to the console (for testing purposes)
+  console.log(`Name: ${usersName}`);
+  console.log(`Email: ${usersEmail}`);
+  console.log(`Message: ${usersMessage}`);
+
+  // Select the #messages section
+  const messageSection = document.getElementById('messages');
+  
+  // Select the <ul> element within the #messages section
+  const messageList = messageSection.querySelector('ul');
+  
+  // Create a new <li> element
+  const newMessage = document.createElement('li');
+
+  // Set the inner HTML of the newMessage element
+  newMessage.innerHTML = `
+    <a href="mailto:${usersEmail}">${usersName}</a>
+    <span> - ${usersMessage}</span>
+  `;
+
+  // Create a new <button> element for removing the message
+  const removeButton = document.createElement('button');
+  removeButton.innerText = 'remove';
+  removeButton.type = 'button';
+
+  // Add an event listener to the removeButton for the "click" event
+  removeButton.addEventListener('click', function() {
+    // Use DOM traversal to find the button's parent element
+    const entry = removeButton.parentNode;
+
+    // Remove the entry element from the DOM
+    entry.remove();
+  });
+
+  // Append the removeButton to the newMessage element
+  newMessage.appendChild(removeButton);
+
+  // Append the newMessage to the messageList element
+  messageList.appendChild(newMessage);
+
+  // Reset the form after submission
+  messageForm.reset();
+});
