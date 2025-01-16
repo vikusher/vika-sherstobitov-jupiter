@@ -140,7 +140,7 @@
         box-shadow: 0 0 5px rgba(252, 187, 109, 0.5);
     }
 
-    /* Messages Section */
+    /* Style for Messages Section */
     #messages {
         width: 100%;  /* Ensure it takes up the full width */
         padding: 20px;
@@ -157,20 +157,20 @@
         padding: 0;
         margin: 0;
     }
-        
+    /* Style individual messages */    
     #messages li {
         padding: 12px;
         margin-bottom: 12px;
     }
-
+    /* Style for the message link (name) */
     #messages li a {
         font-size: 1rem; /* Adjust font size for name link */
     }
-
+    /* Style for the message content */
     #messages li span {
         font-size: 0.95rem; /* Adjust font size for message */
     }
-
+    /* Remove button styles */
     #messages li button {
         padding: 10px 12px;
         font-size: 1rem;
