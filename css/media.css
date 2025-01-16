@@ -101,15 +101,20 @@
         font-size: 1rem;  /* Smaller icon size */
     }
 
+    /* Leave a Message Form Styles */
     form {
-        padding: 15px;
-        margin: 20px;
+        padding: 5px; /* Keep the padding minimal */
+        margin: 0 5px; /* Add a small left and right margin */
+        width: calc(100% - 10px); /* Adjust width to fit within the screen with padding */
+        box-sizing: border-box; /* Ensure padding doesn't affect the width */
     }
 
-    /* Adjust form fields for better touch/tap interactions */
+   
+    /* Form input, textarea, button styles for smaller screens */
     input, textarea, button {
-        font-size: 1.1rem;  /* Slightly larger text for readability */
-        padding: 15px;  /* Increase padding for easier interaction */
+        width: 100%;  /* Make sure form fields and button take full width */
+        padding: 12px 15px;
+        font-size: 1rem;
     }
 
     /* Make the text input fields and textarea full-width */
@@ -135,10 +140,24 @@
         box-shadow: 0 0 5px rgba(252, 187, 109, 0.5);
     }
 
+    /* Messages Section */
+    #messages {
+        width: 100%;  /* Ensure it takes up the full width */
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
     #messages h2 {
         font-size: 1.3rem; /* Adjust heading size for smaller screens */
     }
 
+    /* Message List */
+    #messages ul {
+        width: 100%;  /* Make sure the list takes up the full width */
+        padding: 0;
+        margin: 0;
+    }
+        
     #messages li {
         padding: 12px;
         margin-bottom: 12px;
@@ -155,35 +174,8 @@
     #messages li button {
         padding: 10px 12px;
         font-size: 1rem;
-        width: 100%; /* Full-width button */
+        width: 15%; /* small-width button */
     }
-   /* Message Form */
-   #message-form {
-    width: 100%;  /* Ensure it takes up the full width */
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* Messages Section */
-#messages {
-    width: 100%;  /* Ensure it takes up the full width */
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* Message List */
-#messages ul {
-    width: 100%;  /* Make sure the list takes up the full width */
-    padding: 0;
-    margin: 0;
-}
-
-/* Form input, textarea, button styles for smaller screens */
-input, textarea, button {
-    width: 100%;  /* Make sure form fields and button take full width */
-    padding: 12px 15px;
-    font-size: 1rem;
-}
 
     footer {
         font-size: 14px; /* Slightly smaller font */
@@ -235,17 +227,21 @@ input, textarea, button {
     }  
 
     form {
-        padding: 10px;
+        padding: 5px; /* Keep the padding minimal */
+        margin: 0 5px; /* Add a small left and right margin */
+        width: calc(100% - 10px); /* Adjust width to fit within the screen with padding */
+        box-sizing: border-box; /* Ensure padding doesn't affect the width */
     }
 
     input, textarea, button {
-        font-size: 1.2rem;  /* Larger text for very small devices */
-        padding: 18px;
+        width: 100%; /* Keep inputs and buttons full-width */
+        font-size: 1rem; /* Adjust font size for readability */
+        padding: 12px; /* Maintain a balanced padding */
     }
 
     button[type="submit"] {
-        font-size: 1.3rem;
-        padding: 15px;
+        font-size: 1.2rem;
+        padding: 12px;
     }
 
     #messages h2 {

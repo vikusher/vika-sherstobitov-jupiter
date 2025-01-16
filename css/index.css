@@ -344,8 +344,7 @@ p.collegename {
     transition: color 0.3s ease; /* Smooth color transition */
 }
 
-/* Message Form Styles */
-
+/* Leave a Message Form Styles */
 form {
     margin: 20px 0;
     padding: 20px;
@@ -394,13 +393,11 @@ button[type="submit"]:hover {
 }
 
 button[type="submit"]:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(252, 187, 109, 0.5);
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(252, 187, 109, 0.5);  /* Add focus glow effect */
 }
 
-
 /* Style for Messages Section */
-
 #messages {
     background-color: #fff;
     padding: 20px;
@@ -415,6 +412,7 @@ button[type="submit"]:focus {
     font-weight: bold;
     text-align: left;
     margin-bottom: 20px;
+    margin-top: 0px;
 }
 
 /* Style for the message list */
