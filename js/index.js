@@ -81,6 +81,7 @@ const skills = [
     skillsList.appendChild(skill);
   });
 
+
 // Select the form element
 const messageForm = document.forms['leave_message'];
 
@@ -94,11 +95,6 @@ messageForm.addEventListener('submit', function(event) {
   const usersEmail = event.target.usersEmail.value;
   const usersMessage = event.target.usersMessage.value;
 
-  // Log the retrieved values to the console (for testing purposes)
-  console.log(`Name: ${usersName}`);
-  console.log(`Email: ${usersEmail}`);
-  console.log(`Message: ${usersMessage}`);
-
   // Select the #messages section
   const messageSection = document.getElementById('messages');
   
@@ -111,7 +107,7 @@ messageForm.addEventListener('submit', function(event) {
   // Set the inner HTML of the newMessage element
   newMessage.innerHTML = `
     <a href="mailto:${usersEmail}">${usersName}</a>
-    <span> - ${usersMessage}</span>
+    <span class="message-text"> - ${usersMessage}</span>
   `;
 
   // Create a new <button> element for removing the message
@@ -128,7 +124,50 @@ messageForm.addEventListener('submit', function(event) {
     entry.remove();
   });
 
-  // Append the removeButton to the newMessage element
+  // Create a new <button> element for editing the message
+  const editButton = document.createElement('button');
+  editButton.innerText = 'edit';
+  editButton.type = 'button';
+
+  // Add an event listener to the editButton for the "click" event
+  editButton.addEventListener('click', function() {
+    // Select the message text span
+    const messageText = newMessage.querySelector('.message-text');
+    const currentMessage = messageText.innerText.replace(' - ', '').trim();
+
+    // Create a textarea for editing
+    const textarea = document.createElement('textarea');
+    textarea.value = currentMessage;
+
+    // Replace the message text span with the textarea
+    newMessage.replaceChild(textarea, messageText);
+
+    // Change the "edit" button to "save"
+    editButton.innerText = 'save';
+
+    // Update the event listener for saving the edited message
+    editButton.addEventListener('click', function saveEditedMessage() {
+      // Get the updated message from the textarea
+      const updatedMessage = textarea.value;
+
+      // Create a new span element with the updated message
+      const updatedSpan = document.createElement('span');
+      updatedSpan.className = 'message-text';
+      updatedSpan.innerText = ` - ${updatedMessage}`;
+
+      // Replace the textarea with the updated span
+      newMessage.replaceChild(updatedSpan, textarea);
+
+      // Change the "save" button back to "edit"
+      editButton.innerText = 'edit';
+
+      // Remove the save event listener to avoid duplication
+      editButton.removeEventListener('click', saveEditedMessage);
+    });
+  });
+
+  // Append the removeButton and editButton to the newMessage element
+  newMessage.appendChild(editButton);
   newMessage.appendChild(removeButton);
 
   // Append the newMessage to the messageList element
