@@ -461,6 +461,7 @@ button[type="submit"]:focus {
     border-radius: 5px;
     align-self: flex-start;
     margin-top: 10px;
+    width: 100%;
 }
 
 #messages li button:hover {
@@ -470,6 +471,20 @@ button[type="submit"]:focus {
 #messages li button:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(252, 187, 109, 0.5);
+}
+
+
+#messages .remove, 
+#messages .edit {
+    background-color: #c28234;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;  /* Full width for easier tap on mobile */
+    margin-top: 10px;
 }
 
 /* Footer styling */
@@ -483,8 +498,6 @@ footer {
     bottom: 0; /* Stick to the bottom */
     left: 0; /* Stick to the left edge */
     box-sizing: border-box; /* Includes padding and borders in the element's total width and height */
-    
-    /* margin-top: 20px; */
   }
   
   footer p {

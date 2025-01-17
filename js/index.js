@@ -112,7 +112,8 @@ messageForm.addEventListener('submit', function(event) {
 
   // Create a new <button> element for removing the message
   const removeButton = document.createElement('button');
-  removeButton.innerText = 'remove';
+  removeButton.innerText = 'Remove';
+  removeButton.className = 'remove'; // Add the "remove" class
   removeButton.type = 'button';
 
   // Add an event listener to the removeButton for the "click" event
@@ -126,7 +127,8 @@ messageForm.addEventListener('submit', function(event) {
 
   // Create a new <button> element for editing the message
   const editButton = document.createElement('button');
-  editButton.innerText = 'edit';
+  editButton.innerText = 'Edit';
+  editButton.className = 'edit'; // Add the "edit" class
   editButton.type = 'button';
 
   // Add an event listener to the editButton for the "click" event
@@ -143,7 +145,8 @@ messageForm.addEventListener('submit', function(event) {
     newMessage.replaceChild(textarea, messageText);
 
     // Change the "edit" button to "save"
-    editButton.innerText = 'save';
+    editButton.innerText = 'Save';
+    
 
     // Update the event listener for saving the edited message
     editButton.addEventListener('click', function saveEditedMessage() {
@@ -159,7 +162,7 @@ messageForm.addEventListener('submit', function(event) {
       newMessage.replaceChild(updatedSpan, textarea);
 
       // Change the "save" button back to "edit"
-      editButton.innerText = 'edit';
+      editButton.innerText = 'Edit';
 
       // Remove the save event listener to avoid duplication
       editButton.removeEventListener('click', saveEditedMessage);

@@ -109,7 +109,6 @@
         box-sizing: border-box; /* Ensure padding doesn't affect the width */
     }
 
-   
     /* Form input, textarea, button styles for smaller screens */
     input, textarea, button {
         width: 100%;  /* Make sure form fields and button take full width */
@@ -174,7 +173,7 @@
     #messages li button {
         padding: 10px 12px;
         font-size: 1rem;
-        width: 15%; /* small-width button */
+        width: 100%/* small-width button */
     }
 
     footer {
@@ -226,6 +225,7 @@
         border-radius: 5px; /* Slightly tighter corners */
     }  
 
+    /* Leave a Message Form Styles */
     form {
         padding: 5px; /* Keep the padding minimal */
         margin: 0 5px; /* Add a small left and right margin */
@@ -233,35 +233,45 @@
         box-sizing: border-box; /* Ensure padding doesn't affect the width */
     }
 
+    /* Form input, textarea, button styles for smaller screens */
     input, textarea, button {
         width: 100%; /* Keep inputs and buttons full-width */
         font-size: 1rem; /* Adjust font size for readability */
         padding: 12px; /* Maintain a balanced padding */
     }
 
+    /* Adjust the submit button for better tap interaction */
     button[type="submit"] {
         font-size: 1.2rem;
         padding: 12px;
     }
-
+    /* Style for Messages Section */
+    #messages {
+        margin-left: 10px; /* Adds space between the left border and the section */
+        margin-right: 10px; /* Adds the same space on the right side */
+        padding: 20px; /* Ensures the content inside has enough spacing */
+        box-sizing: border-box; /* Keeps the width consistent with the padding */
+        width: calc(100% - 20px); /* Adjusts width to account for margins */
+    }
+    
     #messages h2 {
         font-size: 1.2rem; /* Adjust heading size for very small screens */
         margin-bottom: 15px;
     }
-
+    /* Style individual messages */    
     #messages li {
         padding: 10px;
         margin-bottom: 10px;
     }
-
+     /* Style for the message link (name) */
     #messages li a {
         font-size: 0.95rem; /* Adjust font size for name link */
     }
-
+     /* Style for the message content */
     #messages li span {
         font-size: 0.9rem; /* Adjust font size for message */
     }
-
+     /* Remove button styles */
     #messages li button {
         padding: 12px 14px;
         font-size: 1.1rem;
@@ -269,7 +279,7 @@
     }
 
     #messages li button:hover {
-        background-color: #e6953f; /* Slightly darker color for hover effect */
+        background-color: #e6953f; 
     }
 
     footer {
