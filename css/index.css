@@ -357,7 +357,7 @@ form {
 input, textarea {
     width: 100%;  /* Ensure full width on mobile */
     padding: 12px 15px;
-    margin: 10px 0;  /* Adequate spacing between fields */
+    margin: 10px 0;  /* spacing between fields */
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;  /* Readable font size */
