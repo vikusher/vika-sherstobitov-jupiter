@@ -81,3 +81,101 @@ const skills = [
     skillsList.appendChild(skill);
   });
 
+
+// Select the form element
+const messageForm = document.forms['leave_message'];
+
+// Add an event listener for the "submit" event
+messageForm.addEventListener('submit', function(event) {
+  // Prevent the default form submission behavior
+  event.preventDefault();
+
+  // Retrieve values from the form fields
+  const usersName = event.target.usersName.value;
+  const usersEmail = event.target.usersEmail.value;
+  const usersMessage = event.target.usersMessage.value;
+
+  // Select the #messages section
+  const messageSection = document.getElementById('messages');
+  
+  // Select the <ul> element within the #messages section
+  const messageList = messageSection.querySelector('ul');
+  
+  // Create a new <li> element
+  const newMessage = document.createElement('li');
+
+  // Set the inner HTML of the newMessage element
+  newMessage.innerHTML = `
+    <a href="mailto:${usersEmail}">${usersName}</a>
+    <span class="message-text"> - ${usersMessage}</span>
+  `;
+
+  // Create a new <button> element for removing the message
+  const removeButton = document.createElement('button');
+  removeButton.innerText = 'Remove';
+  removeButton.className = 'remove'; // Add the "remove" class
+  removeButton.type = 'button';
+
+  // Add an event listener to the removeButton for the "click" event
+  removeButton.addEventListener('click', function() {
+    // Use DOM traversal to find the button's parent element
+    const entry = removeButton.parentNode;
+
+    // Remove the entry element from the DOM
+    entry.remove();
+  });
+
+  // Create a new <button> element for editing the message
+  const editButton = document.createElement('button');
+  editButton.innerText = 'Edit';
+  editButton.className = 'edit'; // Add the "edit" class
+  editButton.type = 'button';
+
+  // Add an event listener to the editButton for the "click" event
+  editButton.addEventListener('click', function() {
+    // Select the message text span
+    const messageText = newMessage.querySelector('.message-text');
+    const currentMessage = messageText.innerText.replace(' - ', '').trim();
+
+    // Create a textarea for editing
+    const textarea = document.createElement('textarea');
+    textarea.value = currentMessage;
+
+    // Replace the message text span with the textarea
+    newMessage.replaceChild(textarea, messageText);
+
+    // Change the "edit" button to "save"
+    editButton.innerText = 'Save';
+    
+
+    // Update the event listener for saving the edited message
+    editButton.addEventListener('click', function saveEditedMessage() {
+      // Get the updated message from the textarea
+      const updatedMessage = textarea.value;
+
+      // Create a new span element with the updated message
+      const updatedSpan = document.createElement('span');
+      updatedSpan.className = 'message-text';
+      updatedSpan.innerText = ` - ${updatedMessage}`;
+
+      // Replace the textarea with the updated span
+      newMessage.replaceChild(updatedSpan, textarea);
+
+      // Change the "save" button back to "edit"
+      editButton.innerText = 'Edit';
+
+      // Remove the save event listener to avoid duplication
+      editButton.removeEventListener('click', saveEditedMessage);
+    });
+  });
+
+  // Append the removeButton and editButton to the newMessage element
+  newMessage.appendChild(editButton);
+  newMessage.appendChild(removeButton);
+
+  // Append the newMessage to the messageList element
+  messageList.appendChild(newMessage);
+
+  // Reset the form after submission
+  messageForm.reset();
+});

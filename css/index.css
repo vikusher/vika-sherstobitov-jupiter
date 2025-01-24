@@ -71,6 +71,8 @@ nav ul li a:hover {
     border: none;
     color: white;
     cursor: pointer;
+    justify-content: left;
+  
 }
 
 /* Add padding to the top of the main content to account for the sticky header */
@@ -305,10 +307,9 @@ p.collegename {
 }
 
 .connect-main-content h2 {
-    font-weight: bold;
-    font-size: 1.1em;
-    color: #c28234;
-    padding-bottom: 1rem;
+    font-size: 1.5rem; 
+    color: #475c7a; 
+    text-align: left;
 }
 
 .connect-main-content .social-icons {
@@ -343,6 +344,149 @@ p.collegename {
     transition: color 0.3s ease; /* Smooth color transition */
 }
 
+/* Leave a Message Form Styles */
+form {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Form Fields (Input, Email, Textarea) */
+input, textarea {
+    width: 100%;  /* Ensure full width on mobile */
+    padding: 12px 15px;
+    margin: 10px 0;  /* spacing between fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;  /* Readable font size */
+    box-sizing: border-box;  /* Includes padding and border in the width */
+    
+}
+
+input[type="text"], input[type="email"] {
+    font-size: 1rem;  /* Standard font size for input fields */
+}
+
+textarea {
+    min-height: 120px;  /* Makes the textarea tall enough */
+    resize: vertical;  /* Allows resizing on desktop */
+}
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: #c28234;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;  /* Full width for easier tap on mobile */
+    margin-top: 10px;
+    
+}
+
+button[type="submit"]:hover {
+    background-color: #e6953f;
+}
+
+button[type="submit"]:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(252, 187, 109, 0.5);  /* Add focus glow effect */
+}
+
+/* Style for Messages Section */
+#messages {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 40px; /* Space above the section */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#messages h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+/* Style for the message list */
+#messages ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style individual messages */
+#messages li {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the message link (name) */
+#messages li a {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+/* Style for the message content */
+#messages li span {
+    font-size: 1rem;
+    color: #34495e;
+    margin-top: 5px;
+    word-wrap: break-word; /* Ensure the message text wraps if too long */
+}
+
+/* Remove button styles */
+#messages li button {
+    background-color: #c28234;
+    border: none;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: flex-start;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#messages li button:hover {
+    background-color: #e6953f;
+}
+
+#messages li button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(252, 187, 109, 0.5);
+}
+
+
+#messages .remove, 
+#messages .edit {
+    background-color: #c28234;
+    color: white;
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;  /* Full width for easier tap on mobile */
+    margin-top: 10px;
+}
+
 /* Footer styling */
 footer {
     width: 100%; /* Ensures the footer spans the entire width */
@@ -350,12 +494,10 @@ footer {
     color: #ecf0f1; /* Light text color */
     text-align: center;
     padding: 10px 0;
-    position: fixed; /* Fixed position to stay visible */
+    position: sticky; /* Fixed position to stay visible */
     bottom: 0; /* Stick to the bottom */
     left: 0; /* Stick to the left edge */
     box-sizing: border-box; /* Includes padding and borders in the element's total width and height */
-    
-    /* margin-top: 20px; */
   }
   
   footer p {
