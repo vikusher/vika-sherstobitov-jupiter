@@ -120,9 +120,10 @@ messageForm.addEventListener('submit', function(event) {
   removeButton.addEventListener('click', function() {
     // Use DOM traversal to find the button's parent element
     const entry = removeButton.parentNode;
-
     // Remove the entry element from the DOM
     entry.remove();
+    // Toggle visibility after removing a message
+    toggleMessageSection();
   });
 
   // Create a new <button> element for editing the message
@@ -169,12 +170,34 @@ messageForm.addEventListener('submit', function(event) {
     });
   });
 
+  //  Function to check the number of messages and toggle the visibility:
+  function toggleMessageSection() {
+    const messageSection = document.getElementById('messages');
+    const messageList = messageSection.querySelector('ul');
+    
+    // Check if there are any <li> elements in the message list
+    if (messageList.children.length === 0) {
+      messageSection.style.display = 'none'; // Hide the message section
+    } else {
+      messageSection.style.display = 'block'; // Show the message section
+    }
+  }
+
+  // When the page loads, ensure the "Messages" section is hidden if there are no existing messages:
+  document.addEventListener('DOMContentLoaded', () => {
+    toggleMessageSection();
+  });
+
+
   // Append the removeButton and editButton to the newMessage element
   newMessage.appendChild(editButton);
   newMessage.appendChild(removeButton);
 
   // Append the newMessage to the messageList element
   messageList.appendChild(newMessage);
+
+  // Toggle visibility after adding a message
+  toggleMessageSection();
 
   // Reset the form after submission
   messageForm.reset();

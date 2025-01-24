@@ -399,6 +399,7 @@ button[type="submit"]:focus {
 
 /* Style for Messages Section */
 #messages {
+    display: none; /* Initially hidden */
     background-color: #fff;
     padding: 20px;
     margin-top: 40px; /* Space above the section */
