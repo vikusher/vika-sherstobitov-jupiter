@@ -202,3 +202,39 @@ messageForm.addEventListener('submit', function(event) {
   // Reset the form after submission
   messageForm.reset();
 });
+
+//DOM Selectors (Getting HTML elements)
+const projectSection = document.getElementById("projects");
+console.log("projectSection: " , projectSection);
+
+const projectList = projectSection.querySelector("ul");
+console.log("projectList :" , projectList);
+
+//Fetch (getting Projects from GitHub API)
+// Chain a then method to your fetch call and pass it a
+// function that returns the response JSON data
+fetch("https://api.github.com/users/vikusher/repos")
+ .then((res) => {
+  return res.json();
+})
+.then((repositories) => {
+ // add repositories to DOM
+ console.log("repositories: ", repositories); 
+
+ //Loop through repositories array and:
+for (let i=0; i < repositories.length; i++) {
+   // get specific project data out
+  const project = repositories[i].name;
+  // create DOM (HTML) elements
+  const li = document.createElement("li");
+  // - put the data from the project into the DOM element (li)
+  li.innerText = project;
+  // add DOM elements to my page
+  projectList.appendChild(li);
+}
+
+})
+.catch((error) => {
+  // add error to
+ console.log(error);
+});
