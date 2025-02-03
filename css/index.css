@@ -163,14 +163,16 @@ body {
 }
 
 /* General styles for the skills section */
-#skills {
+#skills,
+#projects {
     margin: 20px 0;
     font-family: Arial, sans-serif;
     color: #2c3e50;
 }
   
 /* Style the list container (skills section) */
-#skills ul {
+#skills ul,
+#projects ul {
     list-style: none;
     padding: 0;
     display: flex;
@@ -179,7 +181,8 @@ body {
 }
   
 /* Style individual list items (skills section)*/
-#skills li {
+#skills li,
+#projects li {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -190,7 +193,8 @@ body {
     text-align: left; /* Left-align text for readability */
 }
 /* Add hover effect */
-#skills li:hover {
+#skills li:hover,
+#projects li:hover {
     background-color: #eef6ff;
     border-color: #0073e6;
     cursor: pointer;
@@ -399,6 +403,7 @@ button[type="submit"]:focus {
 
 /* Style for Messages Section */
 #messages {
+    display: none; /* Initially hidden */
     background-color: #fff;
     padding: 20px;
     margin-top: 40px; /* Space above the section */

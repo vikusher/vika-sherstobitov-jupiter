@@ -120,9 +120,10 @@ messageForm.addEventListener('submit', function(event) {
   removeButton.addEventListener('click', function() {
     // Use DOM traversal to find the button's parent element
     const entry = removeButton.parentNode;
-
     // Remove the entry element from the DOM
     entry.remove();
+    // Toggle visibility after removing a message
+    toggleMessageSection();
   });
 
   // Create a new <button> element for editing the message
@@ -169,6 +170,25 @@ messageForm.addEventListener('submit', function(event) {
     });
   });
 
+  //  Function to check the number of messages and toggle the visibility:
+  function toggleMessageSection() {
+    const messageSection = document.getElementById('messages');
+    const messageList = messageSection.querySelector('ul');
+    
+    // Check if there are any <li> elements in the message list
+    if (messageList.children.length === 0) {
+      messageSection.style.display = 'none'; // Hide the message section
+    } else {
+      messageSection.style.display = 'block'; // Show the message section
+    }
+  }
+
+  // When the page loads, ensure the "Messages" section is hidden if there are no existing messages:
+  document.addEventListener('DOMContentLoaded', () => {
+    toggleMessageSection();
+  });
+
+
   // Append the removeButton and editButton to the newMessage element
   newMessage.appendChild(editButton);
   newMessage.appendChild(removeButton);
@@ -176,6 +196,45 @@ messageForm.addEventListener('submit', function(event) {
   // Append the newMessage to the messageList element
   messageList.appendChild(newMessage);
 
+  // Toggle visibility after adding a message
+  toggleMessageSection();
+
   // Reset the form after submission
   messageForm.reset();
+});
+
+//DOM Selectors (Getting HTML elements)
+const projectSection = document.getElementById("projects");
+console.log("projectSection: " , projectSection);
+
+const projectList = projectSection.querySelector("ul");
+console.log("projectList :" , projectList);
+
+//Fetch (getting Projects from GitHub API)
+// Chain a then method to your fetch call and pass it a
+// function that returns the response JSON data
+fetch("https://api.github.com/users/vikusher/repos")
+ .then((res) => {
+  return res.json();
+})
+.then((repositories) => {
+ // add repositories to DOM
+ console.log("repositories: ", repositories); 
+
+ //Loop through repositories array and:
+for (let i=0; i < repositories.length; i++) {
+   // get specific project data out
+  const project = repositories[i].name;
+  // create DOM (HTML) elements
+  const li = document.createElement("li");
+  // - put the data from the project into the DOM element (li)
+  li.innerText = project;
+  // add DOM elements to my page
+  projectList.appendChild(li);
+}
+
+})
+.catch((error) => {
+  // add error to
+ console.log(error);
 });

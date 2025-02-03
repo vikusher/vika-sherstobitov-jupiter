@@ -90,14 +90,13 @@
     .connect-main-content {
         flex-direction: column;  /* Stack items vertically for smaller screens */
         padding: 0.5rem;  /* Reduced padding */
+        font-size: 1rem;  /* Smaller icon size */
+        margin-bottom: 20px; /* Add space below the Connect section */
     }
 
     .connect-main-content .social-icons {
         flex-direction: column;  /* Stack icons vertically */
         gap: 0.5rem;  /* Reduced spacing between icons */
-    }
-
-    .connect-main-content .social-icons i {
         font-size: 1rem;  /* Smaller icon size */
     }
 
@@ -280,6 +279,18 @@
 
     #messages li button:hover {
         background-color: #e6953f; 
+    }
+
+    .connect-main-content {
+        flex-direction: column;  /* Stack items vertically for smaller screens */
+        padding: 0.5rem;  /* Reduced padding */
+        margin-bottom: 30px; /* Extra space below the Connect section for smaller screens */
+    }
+
+    .connect-main-content .social-icons {
+        flex-direction: column;  /* Stack icons vertically */
+        gap: 0.5rem;  /* Reduced spacing between icons */
+        font-size: 1rem;  /* Smaller icon size */
     }
 
     footer {
