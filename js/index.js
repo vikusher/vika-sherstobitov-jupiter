@@ -213,28 +213,22 @@ console.log("projectList :" , projectList);
 //Fetch (getting Projects from GitHub API)
 // Chain a then method to your fetch call and pass it a
 // function that returns the response JSON data
+// Fetch (getting Projects from GitHub API)
 fetch("https://api.github.com/users/vikusher/repos")
- .then((res) => {
-  return res.json();
-})
-.then((repositories) => {
- // add repositories to DOM
- console.log("repositories: ", repositories); 
-
- //Loop through repositories array and:
-for (let i=0; i < repositories.length; i++) {
-   // get specific project data out
-  const project = repositories[i].name;
-  // create DOM (HTML) elements
-  const li = document.createElement("li");
-  // - put the data from the project into the DOM element (li)
-  li.innerText = project;
-  // add DOM elements to my page
-  projectList.appendChild(li);
-}
-
-})
-.catch((error) => {
-  // add error to
- console.log(error);
-});
+  .then((res) => res.json())
+  .then((repositories) => {
+    console.log("repositories:", repositories);
+    repositories.forEach((project) => {
+      const li = document.createElement("li");
+      // create the repo link
+      const link = document.createElement("a");
+      link.href = project.html_url;               // repo url
+      link.target = "_blank";                     // open in a new tab
+      link.innerText = project.name;              // project name
+      li.appendChild(link);
+      projectList.appendChild(li);
+    });
+  })
+  .catch((error) => {
+    console.log("Error fetching data:", error); 
+  });
