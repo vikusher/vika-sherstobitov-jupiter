@@ -151,12 +151,6 @@ body {
     word-wrap: break-word; /* Forces text to wrap */
 }
 
-/*
-.sidebar a {
-    color: #fff;
-}
-*/
-
 .languages .stars {
     color: #FCBB6D;
     font-size: 1.1rem;
